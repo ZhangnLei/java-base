@@ -18,6 +18,10 @@ public class StreamAPI {
 
         List<Long> userIds = getUserIds(getUserList());
         userIds.forEach(n -> System.out.println(n));
+        System.out.println();
+
+        List<User> userList = getUserList();
+        System.out.println(userList.contains(new User(1L)));
     }
 
     private static void UseStream() {
