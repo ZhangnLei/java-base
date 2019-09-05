@@ -1,4 +1,4 @@
-package stream;
+package mrzhang.stream;
 
 /**
  * @author zhangnianlei
