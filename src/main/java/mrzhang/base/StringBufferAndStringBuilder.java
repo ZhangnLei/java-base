@@ -17,4 +17,11 @@ public class StringBufferAndStringBuilder {
     public static void main(String[] args) {
         StringBuffer buffer = new StringBuffer();
     }
+
+    /**
+     * 如果要操作少量的数据用 = String.
+     *
+     * 单线程操作字符串缓冲区 下操作大量数据 = StringBuilder
+     * 多线程操作字符串缓冲区 下操作大量数据 = StringBuffer
+     */
 }
