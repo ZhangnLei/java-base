@@ -105,18 +105,36 @@ class Solution1 {
         return head.next;
     }
 
-    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    public static ListNode addTwoNumbers002(ListNode l1, ListNode l2) {
         return num2node(node2num(l1) + node2num(l2));
     }
 
 
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2){
+    	ListNode head = new ListNode(0);
+    	ListNode res = head;
+    	int carry = 0;
+    	while (l1!=null || l2!=null){
+    		int x = (l1 != null) ? l1.val : 0;
+    		int y = (l2 != null) ? l2.val : 0;
+    		int sum = carry + x + y;
+    		res.next = new ListNode(sum % 10);
+    		res = res.next;
+    		carry = sum / 10;
+    		if (l1 != null) l1 = l1.next;
+    		if (l2 != null) l2 = l2.next;
+	    }
+    	if (carry > 0){
+    		res.next = new ListNode(carry);
+	    }
+    	return head.next;
+    }
 
     public static void main(String[] args) {
         ListNode l1 = new ListNode(9);
 //        l1.next = new ListNode(4);
 //        l1.next.next = new ListNode(3);
-//		l1.next.next.next = new ListNode(1);
-//			System.out.println(node2num(l1));
+//		  l1.next.next.next = new ListNode(1);
         ListNode l2 = new ListNode(1);
         l2.next = new ListNode(9);
 		l2.next.next = new ListNode(9);
@@ -126,18 +144,10 @@ class Solution1 {
 		l2.next.next.next.next.next.next = new ListNode(9);
 		l2.next.next.next.next.next.next.next = new ListNode(9);
 		l2.next.next.next.next.next.next.next.next = new ListNode(9);
-//		l2.next.next.next.next.next.next.next.next.next = new ListNode(9);
-//		l2.next.next.next.next.next.next.next.next.next.next = new ListNode(9);
-//		l2.next.next = new ListNode(4);
-//		System.out.println(node2num(l2));
-        ListNode result = addTwoNumbers(l1, l2);
-//		sout(l1);
-//
-//		System.out.println();
-//		sout(l2);
-//		System.out.println();
+		l2.next.next.next.next.next.next.next.next.next = new ListNode(9);
+		l2.next.next.next.next.next.next.next.next.next.next = new ListNode(9);
+        ListNode result = addTwoNumbers002(l1, l2);
         sout(result);
-//		System.out.println();
     }
 
     private static void sout(ListNode result) {
@@ -145,5 +155,6 @@ class Solution1 {
             System.out.print(result.val);
             result = result.next;
         }
+	    System.out.println();
     }
 }
