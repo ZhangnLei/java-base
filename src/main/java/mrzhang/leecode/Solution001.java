@@ -19,7 +19,7 @@ package mrzhang.leecode;
  * 链接：https://leetcode-cn.com/problems/two-sum
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-public class Solution000 {
+public class Solution001 {
 	public int[] twoSum(int[] nums, int target) {
 
 		return null;

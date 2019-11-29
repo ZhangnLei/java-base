@@ -15,7 +15,7 @@ import java.util.List;
  * ListNode(int x) { val = x; }
  * }
  */
-class Solution1 {
+class Solution002 {
 
     /**
      * 通过提交测试的方法
