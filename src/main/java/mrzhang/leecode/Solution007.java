@@ -25,7 +25,16 @@ package mrzhang.leecode;
  * 链接：https://leetcode-cn.com/problems/reverse-integer
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-public class Solution0 {
+public class Solution007 {
+	public int reverse001(int i){
+		long res = 0;
+		while (i != 0) {
+			res = res * 10 + i % 10;
+			i = i / 10;
+		}
+		return (res > Integer.MAX_VALUE || res < Integer.MIN_VALUE) ? 0 : (int)res;
+	}
+
 	public int reverse1(int x) {
 		Boolean isNegative = false;//是否为负数
 		if (x < 0){
