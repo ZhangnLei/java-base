@@ -17,12 +17,112 @@ package mrzhang.leecode;
  */
 public class Solution42 {
 
-	static int trap(int[] height) {
+	/**
+	 * @description 暴力法
+	 * @author zhangnianlei
+	 * @date 2020/1/5
+	 * @exception
+	 * @param: height
+	 * @return: int
+	 * @modifier
+	 */
+	static int trapViolence(int[] height) {
 
-		return 0;
+		int sum = 0;
+		int length = height.length;
+		for (int i = 1; i < length - 1; i++) {
+			int leftMax = getMax(height, 0, i-1);
+			int rightMax = getMax(height, i, length-1);
+			int heigthDiff = Math.min(leftMax, rightMax) - height[i];
+			if (heigthDiff > 0){
+				sum += heigthDiff;
+			}
+		}
+		return sum;
+	}
+
+	private static int getMax(int[] height, int l, int r) {
+		int max = 0;
+		for (int i = l; i <= r; i++) {
+			max = Math.max(height[i], max);
+		}
+		return max;
+	}
+
+	/**
+	 * @description 备忘录法优化
+	 * 执行用时 :1 ms, 在所有 Java 提交中击败了99.98%的用户内存消耗 :37.2 MB, 在所有 Java 提交中击败了84.69%的用户
+	 * @author zhangnianlei
+	 * @date 2020/1/5
+	 * @exception
+	 * @param: height
+	 * @return: int
+	 * @modifier
+	 */
+	static int trapMemo(int[] height){
+		int length = height.length;
+		int[] leftMax = new int[length];
+		int[] rightMax = new int[length];
+		int max = 0;
+		for (int i = 1; i < length - 1; i++) {
+			leftMax[i] = Math.max(max, height[i-1]);
+			max = leftMax[i];
+		}
+		max = 0;
+		for (int i = length - 1; i > 0; i--) {
+			rightMax[i] = Math.max(max, height[i]);
+			max = rightMax[i];
+		}
+		int sum = 0;
+		for (int i = 1; i < length-1; i++) {
+			int heightDifference = Math.min(leftMax[i], rightMax[i]) - height[i];
+			if (heightDifference > 0){
+				sum += heightDifference;
+			}
+		}
+		return sum;
+	}
+
+	/**
+	 * @description 双指针法
+	 * 执行用时 :2 ms, 在所有 Java 提交中击败了50.58%的用户内存消耗 :36.2 MB, 在所有 Java 提交中击败了92.20%的用户
+	 * @author zhangnianlei
+	 * @date 2020/1/5
+	 * @exception
+	 * @param: height
+	 * @return: int
+	 * @modifier
+	 */
+	static int trapPoint(int[] height){
+		int sum = 0;
+		int length = height.length;
+		if (length == 0) return 0;
+		int left = 0;
+		int right = length - 1;
+		int leftMax = height[left];
+		int rightMax = height[right];
+		int heightDiff = 0;
+		while (left < right){
+			if (leftMax < rightMax){
+				heightDiff = Math.min(leftMax, rightMax) - height[left];
+				left ++;
+				leftMax = Math.max(leftMax, height[left]);
+			}else {
+				heightDiff = Math.min(leftMax, rightMax) - height[right];
+				right --;
+				rightMax = Math.max(rightMax, height[right]);
+			}
+			if (heightDiff > 0){
+				sum += heightDiff;
+			}
+		}
+		return sum;
 	}
 
 	public static void main(String[] args) {
-		trap(new int[]{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1});
+		int[] example = new int[]{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
+//		System.out.println(trapViolence(example));
+//		System.out.println(trapMemo(example));
+		System.out.println(trapPoint(example));
 	}
 }
