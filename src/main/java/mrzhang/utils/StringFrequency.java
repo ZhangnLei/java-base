@@ -3,6 +3,7 @@ package mrzhang.utils;
 import java.util.*;
 
 /**
+ * 获取字符的出现频率
  * @author zhangnianlei
  * @date 2020/1/18
  */
