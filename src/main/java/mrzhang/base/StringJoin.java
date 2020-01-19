@@ -1,6 +1,7 @@
 package mrzhang.base;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -14,5 +15,10 @@ public class StringJoin {
 		language.add("php");
 		language.add("c++");
 		System.out.println(String.join(";", language));
+
+		String code = "2";
+		System.out.println(Arrays.asList(code.split("-")));
 	}
+
+
 }
