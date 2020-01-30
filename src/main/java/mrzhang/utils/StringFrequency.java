@@ -28,12 +28,7 @@ public class StringFrequency {
 	static void sortMap(Map<String, Integer> map){
 		List<Map.Entry<String, Integer>> listMap = new ArrayList<>();
 		listMap.addAll(map.entrySet());
-		Collections.sort(listMap, new Comparator<Map.Entry<String, Integer>>() {
-			@Override
-			public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
-				return o2.getValue() - o1.getValue();
-			}
-		});
+		Collections.sort(listMap, (o1, o2) -> o2.getValue() - o1.getValue());
 		listMap.forEach(System.out::println);
 	}
 }
