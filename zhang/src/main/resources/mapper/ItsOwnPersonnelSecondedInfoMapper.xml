@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zhang.com.mapper.ItsOwnPersonnelSecondedInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="zhang.com.entity.ItsOwnPersonnelSecondedInfo">
+        <id column="tenants_no" property="tenantsNo" />
+        <result column="internl_ow_person_to_loan_no" property="internlOwPersonToLoanNo" />
+        <result column="internl_ow_person_id" property="internlOwPersonId" />
+        <result column="to_loan_dept_no" property="toLoanDeptNo" />
+        <result column="to_loan_dept_respsblt_person_id" property="toLoanDeptRespsbltPersonId" />
+        <result column="to_loan_bgn_dt" property="toLoanBgnDt" />
+        <result column="to_loan_end_dt" property="toLoanEndDt" />
+        <result column="to_loan_status_cd" property="toLoanStatusCd" />
+        <result column="valid_flg" property="validFlg" />
+        <result column="creater_id" property="createrId" />
+        <result column="creater_name" property="createrName" />
+        <result column="crt_tm" property="crtTm" />
+        <result column="modifier_id" property="modifierId" />
+        <result column="modifier_name" property="modifierName" />
+        <result column="modfy_tm" property="modfyTm" />
+        <result column="remrk_field_1" property="remrkField1" />
+        <result column="remrk_field_2" property="remrkField2" />
+        <result column="remrk_field_3" property="remrkField3" />
+        <result column="remrk_field_4" property="remrkField4" />
+        <result column="remrk_field_5" property="remrkField5" />
+    </resultMap>
+
+</mapper>

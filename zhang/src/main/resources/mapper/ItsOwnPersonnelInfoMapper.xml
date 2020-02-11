@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zhang.com.mapper.ItsOwnPersonnelInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="zhang.com.entity.ItsOwnPersonnelInfo">
+        <id column="tenants_no" property="tenantsNo" />
+        <result column="internl_ow_person_id" property="internlOwPersonId" />
+        <result column="ow_person_id" property="owPersonId" />
+        <result column="ow_person_name" property="owPersonName" />
+        <result column="ow_person_employee_id" property="owPersonEmployeeId" />
+        <result column="dept_no" property="deptNo" />
+        <result column="mobile_numbr" property="mobileNumbr" />
+        <result column="email_addr" property="emailAddr" />
+        <result column="duty_nm" property="dutyNm" />
+        <result column="rank_cd" property="rankCd" />
+        <result column="position_nm" property="positionNm" />
+        <result column="post_cd" property="postCd" />
+        <result column="offi_place_info" property="offiPlaceInfo" />
+        <result column="valid_flg" property="validFlg" />
+        <result column="creater_id" property="createrId" />
+        <result column="creater_name" property="createrName" />
+        <result column="crt_tm" property="crtTm" />
+        <result column="modifier_id" property="modifierId" />
+        <result column="modifier_name" property="modifierName" />
+        <result column="modfy_tm" property="modfyTm" />
+        <result column="remrk_field_1" property="remrkField1" />
+        <result column="remrk_field_2" property="remrkField2" />
+        <result column="remrk_field_3" property="remrkField3" />
+        <result column="remrk_field_4" property="remrkField4" />
+        <result column="remrk_field_5" property="remrkField5" />
+    </resultMap>
+
+</mapper>
