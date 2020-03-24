@@ -6,7 +6,7 @@ package mrzhang.leecode;
  *
  * 4. 寻找两个有序数组的中位数
  */
-public class Solution4 {
+public class Solution004 {
 
 	/**
 	 * 题目描述：
