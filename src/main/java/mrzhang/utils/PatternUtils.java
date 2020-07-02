@@ -1,6 +1,6 @@
 package mrzhang.utils;
 
-import org.springframework.util.StringUtils;
+import org.apache.commons.lang.StringUtils;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -87,7 +87,11 @@ public class PatternUtils {
 	 * @modifier
 	 */
 	public static boolean checkDate(String date) {
-//		if ()
+		System.out.println(date);
+		if (StringUtils.isBlank(date)) {
+			date = "change";
+			return true;
+		}
 		boolean b = false;
 		try {
 			LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy/MM/dd"));
@@ -101,25 +105,23 @@ public class PatternUtils {
 				b = true;
 			} catch (Exception e) {
 				b = false;
+
 			}
+			return b;
 		}
-		System.out.print(date);
-		if (b) {
-			System.out.println(": 格式正确");
-		} else {
-			System.out.println(": 格式错误");
-		}
-		System.out.println();
 		return b;
 	}
 
 	public static void main(String[] args) {
 // TODO Auto-generated method stub
-		checkDate("2009-01-01");
-		checkDate("2009-1-1");
-		checkDate("2009/01/01");
-		checkDate("2009/1/1");
-		checkDate("2009/13/01");
+		String str = "2001-01";
+		System.out.println(checkDate(str));
+		System.out.println(str);
+//		checkDate("2009-1-1");
+//		checkDate("2009/01/01");
+//		checkDate("2009/1/1");
+//		checkDate("2009/13/01");
+
 	}
 
 }
