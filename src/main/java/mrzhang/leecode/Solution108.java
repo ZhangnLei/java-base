@@ -23,10 +23,23 @@ package mrzhang.leecode;
  */
 public class Solution108 {
 
+
 	public static TreeNode sortedArrayToBST(int[] nums) {
 		return dfs(nums, 0, nums.length - 1);
 	}
 
+
+	/**
+	 * @description 递归的构建一棵二叉搜索树
+	 * @author zhangnianlei
+	 * @date 2020/7/11
+	 * @exception
+	 * @param: nums
+	 * @param: left
+	 * @param: right
+	 * @return: mrzhang.leecode.TreeNode
+	 * @modifier
+	 */
 	private static TreeNode dfs(int[] nums, int left, int right) {
 		if (left > right) {
 			return null;
@@ -38,27 +51,19 @@ public class Solution108 {
 		return root;
 	}
 
+
+	/**
+	 * @description 编写一个main函数在本地检验
+	 * @author zhangnianlei
+	 * @date 2020/7/11
+	 * @exception
+	 * @param: args
+	 * @modifier
+	 */
 	public static void main(String[] args) {
 		int[] nums = {-10,-3,0,5,9};
 		TreeNode root = sortedArrayToBST(nums);
-		prePrint(root);
-	}
-
-	/**
-	 * @description 中序遍历打印二叉树
-	 * @author zhangnianlei
-	 * @date 2020/7/7
-	 * @exception
-	 * @param: root
-	 * @modifier
-	 */
-	private static void prePrint(TreeNode head) {
-		if (head == null) {
-			return;
-		}
-		prePrint(head.left);
-		System.out.println(head.val);
-		prePrint(head.right);
+		TreeNode.prePrint(root);
 	}
 
 }

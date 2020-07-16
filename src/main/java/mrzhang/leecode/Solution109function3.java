@@ -1,6 +1,5 @@
 package mrzhang.leecode;
 
-
 /**
  * @author zhangnianlei
  * @date 2020/7/8
@@ -36,7 +35,7 @@ public class Solution109function3 {
 	}
 
 	/**
-	 * @description 109 方法三 逆用中序遍历的思想：中序遍历二叉搜索树得到一个升序数列，那么反过来，使用此法将一个升序的数列构建成一个二叉搜索树
+	 * @description leetcode 109 方法三 逆用中序遍历的思想：中序遍历二叉搜索树得到一个升序数列，那么反过来，使用此法将一个升序的数列构建成一个二叉搜索树
 	 * @author zhangnianlei
 	 * @date 2020/7/9
 	 * @exception
@@ -53,7 +52,16 @@ public class Solution109function3 {
 		return convertListToBST(0, size - 1);
 	}
 
-
+	/**
+	 * @description 计算listNode的长度
+	 * @author zhangnianlei
+	 * @date 2020/7/11
+	 * @exception
+	 * @param: left
+	 * @param: right
+	 * @return: mrzhang.leecode.TreeNode
+	 * @modifier
+	 */
 	private TreeNode convertListToBST(int left, int right) {
 		if (right < left) return null;
 		int mid = (right + left) / 2;
@@ -65,7 +73,15 @@ public class Solution109function3 {
 		return result;
 	}
 
-
+	/**
+	 * @description 计算listNode的长度
+	 * @author zhangnianlei
+	 * @date 2020/7/11
+	 * @exception
+	 * @param: head
+	 * @return: int
+	 * @modifier
+	 */
 	private int countListNodeSize(ListNode head) {
 		if (head == null) return 0;
 		int sum = 0;

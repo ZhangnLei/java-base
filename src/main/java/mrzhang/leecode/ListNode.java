@@ -11,7 +11,15 @@ public 	class ListNode {
 		val = x;
 	}
 
-
+	/**
+	 * @description 使用数组快速构建一个ListNode
+	 * @author zhangnianlei
+	 * @date 2020/7/11
+	 * @exception
+	 * @param: nums
+	 * @return: mrzhang.leecode.ListNode
+	 * @modifier
+	 */
 	public static ListNode getListNode(int[] nums) {
 		if (nums == null || nums.length == 0) {
 			return null;
@@ -28,6 +36,14 @@ public 	class ListNode {
 	}
 
 
+	/**
+	 * @description 打印ListNode
+	 * @author zhangnianlei
+	 * @date 2020/7/11
+	 * @exception
+	 * @param: head
+	 * @modifier
+	 */
 	private static void pringListNode(ListNode head) {
 		StringBuilder sb = new StringBuilder("ListNode : ");
 		if (head == null) {
