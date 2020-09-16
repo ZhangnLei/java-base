@@ -67,8 +67,8 @@ class Solution94 {
 	 * @return: java.util.List<java.lang.Integer>
 	 * @modifier
 	 */
-	public List<Integer> inorderTraversal2(TreeNode root) {
-
-
-	}
+//	public List<Integer> inorderTraversal2(TreeNode root) {
+//
+//
+//	}
 }
