@@ -15,14 +15,22 @@ public class DateTimeUtils {
 //		System.out.println("sqlDateToString***"+newSqlDate.toString());
 //	}
 
-	public static void main(String[] args) {
-		String data = "2019-12-05 15:30:11";
+	public static void main(String[] args) throws Exception {
+		String data = "2019";
 		System.out.println(getDatePart(data));
 	}
 
-	public static String getDatePart(String string) {
+	public static String getDatePart1(String string) {
 		LocalDateTime dateTime = LocalDateTime.parse(string, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 		return dateTime.toLocalDate().toString();
+	}
+
+	public static String getDatePart(String string) throws Exception {
+		String[] s = string.split(" ");
+		if (string.length() < 1) {
+			throw new Exception("日期转换失败");
+		}
+		return s[0];
 	}
 
 }
