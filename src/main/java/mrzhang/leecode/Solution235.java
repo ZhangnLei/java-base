@@ -33,19 +33,24 @@ public class Solution235 {
 	 * p、q 为不同节点且均存在于给定的二叉搜索树中。
 	 */
 
-
 	/**
 	 * 两种方法
 	 * 1. 记录 从根节点到p、q的距离保存到链表中，然后比较两个链表找到最后一个相同的节点
 	 * 2. 先将pq排序，使p<q, 从根节点开始遍历 当 p > root，root = root.right; 当 q < root, root = root.right; 当上述两者都不成立时，上一个节点便是最小祖先
-	 * @param root
-	 * @param p
-	 * @param q
-	 * @return
+	 */
+
+	/**
+	 * 方法二
 	 */
 	public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-
-		return null;
+		if (p.val > q.val) return lowestCommonAncestor(root, q, p);
+		TreeNode result = root;
+		while (null != result) {
+			if (p.val > result.val) result = result.right;
+			else if (q.val < result.val) result = result.left;
+			else return result;
+		}
+		return result;
 	}
 
 }
