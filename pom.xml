@@ -51,6 +51,23 @@
             <version>2.6</version>
         </dependency>
 
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.openjdk.jol/jol-core &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.openjdk.jol</groupId>-->
+<!--            <artifactId>jol-core</artifactId>-->
+<!--            <version>0.9</version>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
+
+
+        <!-- https://mvnrepository.com/artifact/org.openjdk.jol/jol-cli -->
+        <dependency>
+            <groupId>org.openjdk.jol</groupId>
+            <artifactId>jol-cli</artifactId>
+            <version>0.9</version>
+        </dependency>
+
+
 
 
     </dependencies>
