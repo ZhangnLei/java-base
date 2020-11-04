@@ -1,5 +1,6 @@
 package mrzhang.utils;
 
+import com.alibaba.fastjson.JSON;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -133,7 +134,7 @@ public class ConvertToHtmlUtils {
 
 
 		// TODO: 2020/11/4 delete
-		System.out.println("directoryInfos : ");
+		System.out.println("directoryInfos : " + JSON.toJSONString(directoryInfos));
 		// TODO: 2020/11/4 delete
 		for (DirectoryInfo info : directoryInfos) {
 			System.out.println(info);
