@@ -1,4 +1,4 @@
-package mrzhang.base.mashibing.mutithread;
+package mrzhang.mashibing.mutithread;
 
 import org.openjdk.jol.info.ClassLayout;
 
