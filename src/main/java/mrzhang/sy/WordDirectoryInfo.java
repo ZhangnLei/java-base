@@ -1,4 +1,4 @@
-package mrzhang.utils;
+package mrzhang.sy;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,7 +29,22 @@ public class WordDirectoryInfo {
 	private Integer pId;
 
 	/**
-	 * 目录名
+	 * 标题名称前的数字
+	 */
+	private String titleNum;
+
+	/**
+	 * 父级标题名称前的数字
+	 */
+	private String pTitleNum;
+
+	/**
+	 * 标题的原始中文
+	 */
+	private String text;
+
+	/**
+	 * 标题名称 = titleNum + text
 	 */
 	private String name;
 
@@ -49,6 +64,11 @@ public class WordDirectoryInfo {
 	private Integer level;
 
 	/**
+	 * 标题所在当前层级的索引 (from 1)
+	 */
+	private Integer index;
+
+	/**
 	 * 是否是父级（有子集时便是父级）
 	 */
 	private Boolean isParent;
@@ -58,11 +78,16 @@ public class WordDirectoryInfo {
 	 */
 	private String label;
 
+	/**
+	 * 内容
+	 */
+	private String content;
+
 	public WordDirectoryInfo(Element element) {
 		this.id = element.siblingIndex();
 		this.position = "position" + element.siblingIndex();
 		this.pId = 0;
-		this.name = element.text();
+		this.text = element.text();
 		this.tagName = element.tagName();
 	}
 }
