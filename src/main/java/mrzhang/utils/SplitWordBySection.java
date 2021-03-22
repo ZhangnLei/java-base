@@ -28,6 +28,7 @@ public class SplitWordBySection {
 			//将源文档中的指定节复制到新文档
 			newWord.getSections().add(document.getSections().get(i).deepClone());
 
+//			newWord.
 			//保存新文档到指定文件夹
 			newWord.saveToFile(String.format("/Users/zhangdabao/Documents/code/Java/java-base/src/main/java/mrzhang/utils/result-%d.docx", i));
 		}
