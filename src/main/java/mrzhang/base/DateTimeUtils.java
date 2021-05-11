@@ -1,5 +1,7 @@
 package mrzhang.base;
 
+import org.springframework.cglib.core.Local;
+
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -16,8 +18,10 @@ public class DateTimeUtils {
 //	}
 
 	public static void main(String[] args) throws Exception {
-		String data = "2019";
-		System.out.println(getDatePart(data));
+//		String data = "2019";
+//		System.out.println(getDatePart(data));
+		LocalDateTime ok = LocalDateTime.now();
+		System.out.println(ok);
 	}
 
 	public static String getDatePart1(String string) {
