@@ -24,7 +24,7 @@ public class ModelMapperUse {
 		private String id ;
 		private String name ;
 		private String createAge ;
-		private List<String> codelist;
+		private List<A1> codelist;
 	}
 
 	@Data
@@ -34,7 +34,7 @@ public class ModelMapperUse {
 	public static class AppleVo {
 		private String name ;
 		private String id ;
-		private List<String> codelist;
+		private List<A2> codelist;
 	}
 
 	@Data
@@ -46,16 +46,34 @@ public class ModelMapperUse {
 		private String create_age ;
 	}
 
+	@Data
+	@NoArgsConstructor
+	@AllArgsConstructor
+	@ToString
+	public static class A1 {
+		private String name ;
+		private String create_age ;
+	}
+
+
+	@Data
+	@NoArgsConstructor
+	@AllArgsConstructor
+	@ToString
+	public static class A2 {
+		private String name ;
+	}
+
 	public static void main(String[] args) {
-		List<String> codeList = new ArrayList<>(5);
-		codeList.add("java");
-		codeList.add("c++");
+		List<A1> codeList = new ArrayList<>(5);
+		codeList.add(new A1("java", "12"));
+		codeList.add(new A1("c++", "12"));
+		codeList.add(new A1("php", "12"));
 		Apple apple = new Apple("1", "zhang", "19", codeList);
 		System.out.println(apple.toString());
 		AppleVo appleVo = new ModelMapper().map(apple, AppleVo.class);
 		System.out.println(appleVo.toString());
-		AppleDTO appleDTO = new ModelMapper().map(apple, AppleDTO.class);
-		System.out.println(appleDTO.toString());
+
 		/**
 		 * 运行代码后输出：
 		 * ModelMapperUse.Apple(id=1, name=zhang, createAge=19, codelist=[java, c++])
