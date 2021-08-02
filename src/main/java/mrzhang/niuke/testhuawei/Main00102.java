@@ -1,4 +1,4 @@
-package mrzhang.niuke.huawei;
+package mrzhang.niuke.testhuawei;
 
 import java.io.BufferedReader;
 import java.io.IOException;
