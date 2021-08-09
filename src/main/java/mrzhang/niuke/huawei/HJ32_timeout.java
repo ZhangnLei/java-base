@@ -26,33 +26,55 @@ import java.util.Scanner;
  */
 public class HJ32_timeout {
 
+	/**
+	 * @throws
+	 * @description
+	 * 暴力解采用双指针从两侧向中心搜索，复杂度可达O（n^3）。这里我们采用中心扩散的做法，把复杂度降到O（n^2）。
+	 * 所谓中心扩散，就是选定一个值，然后向左右扩散。
+	 * 我们可以发现，回文串有两种，一种是aabb，中心在ab之间；另一种是aacbb，中心为c。
+	 * 我们可以写一个方法，通过给left和right传入不同的初始index来实现这两种情况。
+	 * @author zhangnianlei
+	 * @date 2021/8/5
+	 * @param: args
+	 * @modifier
+	 */
 	public static void main(String[] args) {
+
 		Scanner sc = new Scanner(System.in);
 		while (sc.hasNextLine()) {
-			String word = sc.nextLine();
-			int length = word.length();
-			int total = 1;
-			for (int i = 0; i < length - 1; i++) {
-				for (int j = i + 1; j < length; j++) {
-					String each = word.substring(i, j + 1);
-					if (isHuiWen(each) && total < each.length()) {
-						total = each.length();
-					}
-				}
+			String words = sc.nextLine();
+			int max = 0;
+			for (int i = 0; i < words.length() - 1; i++) {
+
+				max = Math.max(max, getMaxStringLen(words, i, i));
+				max = Math.max(max, getMaxStringLen(words, i, i + 1));
 			}
-			System.out.println(total);
+			System.out.println(max);
 		}
+
 	}
 
 
-	private static boolean isHuiWen(String each) {
-
-		for (int i = 0; i < each.length() / 2; i++) {
-			if (each.charAt(i) != each.charAt(each.length() - i - 1)) {
-				return false;
-			}
+	/**
+	 * @throws
+	 * @description 从 l-r 起点 为中心，寻找最大回文子串长度
+	 * @author zhangnianlei
+	 * @date 2021/8/5
+	 * @param: words
+	 * @param: l
+	 * @param: r
+	 * @return: int
+	 * @modifier
+	 */
+	private static int getMaxStringLen(String words, int l, int r) {
+		int max = 0;
+		while (l >= 0 && r < words.length() && words.charAt(l) == words.charAt(r)) {
+			int len = r - l + 1;
+			max = Math.max(len, max);
+			l--;
+			r++;
 		}
-		return true;
+		return max;
 	}
 
 }
