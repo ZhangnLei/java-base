@@ -7,9 +7,16 @@ package mrzhang.leecode.动态规划;
  */
 public class Solution72_time3 {
 
+
+	public static void main(String[] args) {
+		System.out.println("hello");
+	}
+	private int m;
+
 	public int minDistance(String word1, String word2) {
 		int m = word1.length();
 		int n = word2.length();
+
 
 		int[][] dp = new int[m+1][n+1];
 		for (int i = 1; i <= m; i++) {
